@@ -100,7 +100,7 @@ class Login extends StatelessWidget {
                         }
                        try{
                           UserCredential credential = await instance.signInWithEmailAndPassword(email:'${email.text}',password:'${password.text}');
-                          Navigator.push(
+                          Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => TaskPage()));
@@ -141,16 +141,26 @@ class Login extends StatelessWidget {
                         style: TextStyle(fontSize: 27),
                       ),
                     ),
-            InkWell(
+                    InkWell(
               child: const Padding(
                 padding: EdgeInsets.all(16.0),
-                child: Text(
-                  'Register Now',
+                child:Text.rich(
+                    TextSpan(
+                        text: "Don't have an account? ",
+                        children: <InlineSpan>[
+                          TextSpan(
+                            text: 'Register Now',
+                            style: TextStyle(fontSize: 20,color: Colors.blue,),
+                          )
+                        ]
+                    )
+                ),/* Text(
+                  "Don't have an account? Register Now",
                   style: TextStyle(
                     color: Colors.blue,
                     decoration: TextDecoration.underline,
                   ),
-                ),
+                ),*/
               ),
               onTap: (){
                 Navigator.push(

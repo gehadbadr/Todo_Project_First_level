@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:project/view_models/app_view_model.dart';
+import 'package:project/views/login_view.dart';
 import 'package:project/views/task_page.dart';
 import 'package:provider/provider.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -188,6 +189,28 @@ class Register extends StatelessWidget {
                           style: TextStyle(fontSize: 27),
                         ),
                       ),
+                      InkWell(
+                          child: const Padding(
+                            padding: EdgeInsets.all(16.0),
+                            child:Text.rich(
+                          TextSpan(
+                          text: 'Already have an account? ',
+                              children: <InlineSpan>[
+                                TextSpan(
+                                  text: 'Login',
+                                  style: TextStyle(fontSize: 20,color: Colors.blue,),
+                                )
+                              ]
+                          )
+                      ),
+                          ),
+                          onTap: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Login()));
+                          })
+
                     ],
                 ),
             ),
