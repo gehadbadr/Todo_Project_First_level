@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:project/views/dashboard_view.dart';
 import 'package:project/views/login_view.dart';
 import 'package:project/views/profile_view.dart';
+import 'package:project/views/register_view.dart';
 import 'package:project/views/splash.dart';
 import 'package:provider/provider.dart';
 import 'package:project/view_models/app_view_model.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
           '/dashboard':(context)=> const DashboardView(),
           '/profile':(context)=> const ProfileView(),
           '/login':(context)=>  Login(),
+          '/register':(context)=>  Register(),
         },
         debugShowCheckedModeBanner: false,
         home:Splash()
